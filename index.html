@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesurez la valeur de votre IA, pas le buzz — Formation express</title>
+<meta name="description" content="En 3 heures, chiffrez la valeur réelle de chaque outil IA de votre entreprise : capability yield, 5 indicateurs, business case, rapport direction. Formation PDF 49 €, Pack complet 89 €, Pack Direction 149 €.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23120d08'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23f59e0b' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  :root{
+    --bg:#120d08;
+    --bg-2:#1a130a;
+    --surface:#1d150c;
+    --surface-2:#241a0e;
+    --ink:#f5e9d3;
+    --ink-dim:#c9b99b;
+    --ink-faint:#8d7c5f;
+    --amber:#f59e0b;
+    --amber-soft:#fbbf24;
+    --copper:#b45309;
+    --line:rgba(245,158,11,.28);
+    --line-strong:rgba(245,158,11,.55);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    background-image:radial-gradient(1100px 520px at 78% -8%, rgba(245,158,11,.09), transparent 62%),
+                     radial-gradient(900px 500px at -12% 28%, rgba(180,83,9,.07), transparent 60%);
+    background-repeat:no-repeat;
+    color:var(--ink);
+    font-family:var(--serif);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--amber);color:#1a1105;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  a{color:var(--amber);text-decoration:none;}
+  a:hover{color:var(--amber-soft);}
+
+  /* --- Nav --- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,13,8,.88);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:var(--serif);font-size:1.05rem;letter-spacing:.02em;color:var(--ink);}
+  .brand em{font-style:italic;color:var(--amber);}
+  .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+  .nav-links a{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);}
+  .nav-links a:hover{color:var(--amber);}
+  .nav-cta{
+    font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#1a1105;background:linear-gradient(135deg,var(--amber-soft),var(--copper));
+    padding:11px 20px;border-radius:2px;font-weight:600;
+  }
+  .nav-cta:hover{color:#1a1105;filter:brightness(1.08);}
+
+  /* --- Hero --- */
+  .hero{padding:96px 0 72px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:start;}
+  .kicker{
+    font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--amber);display:flex;align-items:center;gap:14px;margin-bottom:26px;
+  }
+  .kicker::before{content:"";width:44px;height:1px;background:var(--line-strong);}
+  h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:1.04;letter-spacing:-.01em;
+    margin-bottom:28px;color:var(--ink);
+  }
+  h1 em{font-style:italic;color:var(--amber);}
+  .hero-lead{font-size:1.13rem;line-height:1.7;color:var(--ink-dim);max-width:34em;margin-bottom:36px;}
+  .hero-lead strong{color:var(--ink);font-weight:400;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    padding:16px 30px;border-radius:2px;font-weight:600;transition:transform .15s ease,filter .15s ease;
+    min-height:44px;
+  }
+  .btn-amber{color:#1a1105;background:linear-gradient(135deg,var(--amber-soft),var(--copper));}
+  .btn-amber:hover{color:#1a1105;filter:brightness(1.08);transform:translateY(-1px);}
+  .btn-ghost{color:var(--ink);border:1px solid var(--line-strong);}
+  .btn-ghost:hover{color:var(--amber);border-color:var(--amber);}
+  .hero-aside{position:relative;padding-top:14px;}
+  .hero-aside::before{content:"";position:absolute;top:0;left:0;width:64px;height:2px;background:linear-gradient(90deg,var(--amber),transparent);}
+  .hero-aside p{color:var(--ink-dim);font-size:1.02rem;}
+  .hero-aside p + p{margin-top:18px;}
+  .hero-facts{margin-top:34px;border-top:1px solid var(--line);padding-top:26px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;}
+  .hero-facts li{display:flex;flex-direction:column;}
+  .hero-facts b{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--amber);line-height:1.1;}
+  .hero-facts span{font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px;}
+  .gold-rule{height:1px;max-width:1120px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(245,158,11,.45),transparent);}
+
+  /* --- Band stats --- */
+  .band{padding:56px 0;border-bottom:1px solid var(--line);}
+  .band-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  .band-item{padding:0 30px;border-left:1px solid var(--line);}
+  .band-item:first-child{border-left:none;padding-left:0;}
+  .band-item b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3rem);color:var(--amber);line-height:1.1;}
+  .band-item span{font-family:var(--sans);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:8px;}
+  .band-note{margin-top:26px;font-family:var(--sans);font-size:.68rem;letter-spacing:.08em;color:var(--ink-faint);text-transform:uppercase;}
+
+  /* --- Sections --- */
+  section.block{padding:88px 0;}
+  .sec-head{max-width:720px;margin-bottom:56px;}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.12;color:var(--ink);margin-top:18px;}
+  h2 em{font-style:italic;color:var(--amber);}
+  .sec-intro{margin-top:20px;color:var(--ink-dim);font-size:1.05rem;}
+
+  /* --- Piège --- */
+  .trap-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+  .trap-col h3{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+  .trap-col h3::after{content:"";flex:1;height:1px;background:var(--line);}
+  .trap-col.bad h3{color:#a4706b;}
+  .trap-col.good h3{color:var(--amber);}
+  .trap-list{list-style:none;}
+  .trap-list li{
+    padding:18px 0 18px 34px;border-top:1px solid rgba(245,158,11,.14);
+    position:relative;color:var(--ink-dim);font-size:1.03rem;
+  }
+  .trap-list li:first-child{border-top:none;}
+  .trap-list.bad li::before{content:"✕";position:absolute;left:0;top:18px;color:#8a4b46;font-family:var(--sans);font-size:.8rem;}
+  .trap-list.good li::before{content:"—";position:absolute;left:0;top:18px;color:var(--amber);}
+  .trap-note{margin-top:26px;font-size:.95rem;color:var(--ink-faint);font-style:italic;}
+  .pullquote{
+    margin-top:72px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);
+    padding:36px 0;text-align:center;
+  }
+  .pullquote p{font-size:clamp(1.3rem,2.6vw,1.75rem);font-style:italic;line-height:1.45;color:var(--ink);max-width:820px;margin:0 auto;}
+  .pullquote p em{color:var(--amber);}
+
+  /* --- Programme --- */
+  .module{border-top:1px solid var(--line);padding:44px 0;display:grid;grid-template-columns:170px 1fr;gap:44px;align-items:start;}
+  .module:last-child{border-bottom:1px solid var(--line);}
+  .module-num{
+    font-family:var(--serif);font-weight:400;font-size:clamp(4rem,8vw,6.6rem);line-height:.9;
+    color:transparent;-webkit-text-stroke:1.5px rgba(245,158,11,.5);
+    transition:color .25s ease;
+  }
+  .module:hover .module-num{color:rgba(245,158,11,.14);-webkit-text-stroke-color:rgba(245,158,11,.75);}
+  .module-body h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.6vw,2rem);line-height:1.2;color:var(--ink);margin-bottom:12px;}
+  .module-body h3 em{font-style:italic;color:var(--amber);}
+  .module-body p{color:var(--ink-dim);font-size:1rem;max-width:60ch;}
+  .module-meta{margin-top:16px;display:flex;gap:22px;flex-wrap:wrap;}
+  .module-meta span{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);display:flex;align-items:center;gap:8px;}
+  .module-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);}
+
+  /* --- Offres --- */
+  .offers{background:linear-gradient(180deg,rgba(245,158,11,.045),transparent 40%);}
+  .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch;}
+  .offer{
+    background:var(--surface);border:1px solid var(--line);padding:36px 32px;
+    display:flex;flex-direction:column;position:relative;
+  }
+  .offer.featured{border-color:var(--amber);background:linear-gradient(180deg,rgba(245,158,11,.09),var(--surface));}
+  .offer-badge{
+    position:absolute;top:-13px;left:32px;
+    font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+    background:linear-gradient(135deg,var(--amber-soft),var(--copper));color:#1a1105;
+    padding:6px 14px;border-radius:2px;font-weight:700;
+  }
+  .offer h3{font-family:var(--serif);font-weight:400;font-size:1.45rem;color:var(--ink);}
+  .offer .tagline{font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-top:8px;}
+  .offer .price{margin:26px 0 4px;font-family:var(--serif);font-weight:400;}
+  .offer .price b{font-size:2.9rem;color:var(--ink);font-weight:400;}
+  .offer .price small{font-size:1.05rem;color:var(--ink-faint);}
+  .offer .price-note{font-family:var(--sans);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:22px;}
+  .offer ul{list-style:none;margin:0 0 28px;flex:1;}
+  .offer ul li{padding:10px 0 10px 26px;position:relative;color:var(--ink-dim);font-size:.95rem;border-top:1px solid rgba(245,158,11,.12);}
+  .offer ul li:first-child{border-top:none;}
+  .offer ul li::before{content:"—";position:absolute;left:0;color:var(--amber);}
+  .offer .btn{text-align:center;}
+  .offer-note{margin-top:34px;font-size:.9rem;color:var(--ink-faint);font-style:italic;text-align:center;}
+
+  /* --- Commande --- */
+  .cmd-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;}
+  .cmd-left h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--ink);margin-bottom:16px;}
+  .cmd-left p{color:var(--ink-dim);font-size:.98rem;margin-bottom:16px;}
+  .cmd-left ul{list-style:none;margin-top:8px;}
+  .cmd-left ul li{padding:8px 0 8px 26px;position:relative;color:var(--ink-dim);font-size:.95rem;}
+  .cmd-left ul li::before{content:"—";position:absolute;left:0;color:var(--amber);}
+  .form-card{background:var(--surface);border:1px solid var(--line);padding:38px 36px;}
+  .form-card label{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px;}
+  .form-card .field{margin-bottom:22px;}
+  .form-card input,.form-card select,.form-card textarea{
+    width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--serif);font-size:1rem;padding:13px 14px;border-radius:2px;
+    transition:border-color .15s ease;
+  }
+  .form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--amber);}
+  .form-card select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;}
+  .form-card textarea{min-height:90px;resize:vertical;}
+  .form-card .btn{width:100%;text-align:center;border:none;cursor:pointer;margin-top:6px;}
+  .form-note{margin-top:16px;font-size:.82rem;color:var(--ink-faint);}
+  #ok{
+    display:none;margin-top:22px;border:1px solid var(--line-strong);background:rgba(245,158,11,.07);
+    padding:16px 18px;color:var(--ink);font-size:.95rem;
+  }
+  #ok b{color:var(--amber);font-weight:400;}
+
+  /* --- FAQ --- */
+  .faq-list{max-width:760px;}
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:var(--serif);font-size:1.08rem;color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-family:var(--serif);font-size:1.4rem;color:var(--amber);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .faq-a{padding:0 0 24px;color:var(--ink-dim);font-size:.95rem;max-width:64ch;}
+
+  /* --- Footer --- */
+  footer{border-top:1px solid var(--line);padding:48px 0 56px;margin-top:40px;}
+  .foot-inner{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;}
+  .foot-brand{font-family:var(--serif);font-size:1.05rem;}
+  .foot-brand em{font-style:italic;color:var(--amber);}
+  footer p{font-family:var(--sans);font-size:.74rem;letter-spacing:.06em;color:var(--ink-faint);line-height:1.9;}
+
+  /* --- Reveal --- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+
+  /* --- Responsive --- */
+  @media (max-width:960px){
+    .hero-grid,.trap-grid,.cmd-grid{grid-template-columns:1fr;gap:44px;}
+    .band-grid{grid-template-columns:1fr 1fr;gap:30px 0;}
+    .band-item{border-left:none;padding:0;}
+    .band-item:nth-child(odd){border-right:1px solid var(--line);padding-right:24px;}
+    .band-item:nth-child(even){padding-left:24px;}
+    .offer-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+    .module{grid-template-columns:1fr;gap:16px;}
+    .nav-links{display:none;}
+  }
+  @media (max-width:560px){
+    .hero{padding:64px 0 56px;}
+    .band-grid{grid-template-columns:1fr;gap:26px;}
+    .band-item:nth-child(odd){border-right:none;padding:0;}
+    .band-item:nth-child(even){padding:0;}
+    .hero-facts{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Mesurez la valeur de <em>votre IA</em></a>
+    <ul class="nav-links">
+      <li><a href="#methode">La méthode</a></li>
+      <li><a href="#programme">Le programme</a></li>
+      <li><a href="#offres">Les offres</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="nav-cta" href="#offres">Commander</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <p class="kicker">Formation express&nbsp;·&nbsp;6 modules&nbsp;·&nbsp;3 heures</p>
+        <h1>Mesurez la valeur de <em>votre IA</em>, pas le buzz.</h1>
+        <p class="hero-lead"><strong>En 3 heures, vous savez chiffrer la valeur réelle de chaque outil IA de votre entreprise&nbsp;:</strong> heures réallouées, qualité, capacité, vitesse, euros — avec des hypothèses défendables, et un rapport de trois pages que la direction accepte.</p>
+        <div class="hero-cta">
+          <a class="btn btn-amber" href="#offres">Voir les offres</a>
+          <a class="btn btn-ghost" href="#programme">Le programme</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <p>Chaque semaine, des entreprises paient des licences IA sans pouvoir dire ce qu'elles rapportent. Ce n'est pas un problème technique — c'est un problème de <em>mesure</em>.</p>
+        <p>Cette formation vous donne la méthode complète&nbsp;: le capability yield, cinq indicateurs de valeur, un business case en trois scénarios, un protocole de mesure avant/pendant/après — et le langage que la finance comprend.</p>
+        <ul class="hero-facts">
+          <li><b>3 h</b><span>de formation, à votre rythme</span></li>
+          <li><b>6 modules</b><span>denses et chiffrés</span></li>
+          <li><b>5 indicateurs</b><span>de valeur, convertis en euros</span></li>
+          <li><b>1 rapport</b><span>prêt à présenter</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-grid">
+      <div class="band-item"><b>269&nbsp;%</b><span>ROI la première année</span></div>
+      <div class="band-item"><b>3,2 mois</b><span>retour sur investissement</span></div>
+      <div class="band-item"><b>45&nbsp;%</b><span>de tickets résolus sans intervention</span></div>
+      <div class="band-item"><b>110&nbsp;840&nbsp;€</b><span>de valeur annuelle mesurée</span></div>
+    </div>
+    <p class="band-note">Exemple chiffré de la formation — chatbot de support, 12&nbsp;000 tickets/an (module 4)</p>
+  </div>
+</section>
+
+<section class="block" id="methode">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">Le point de départ</p>
+      <h2>Le piège du «&nbsp;combien d'emplois ça remplace&nbsp;»</h2>
+      <p class="sec-intro">Ce réflexe transforme votre projet IA en projet de réduction de coûts — et déclenche la résistance des équipes, les procédures RH et la défiance de la direction. La méthode remplace la peur par quatre leviers mesurables.</p>
+    </div>
+    <div class="trap-grid">
+      <div class="trap-col bad reveal">
+        <h3>Ce que tout le monde demande</h3>
+        <ul class="trap-list bad">
+          <li>«&nbsp;Combien d'emplois ça remplace&nbsp;?&nbsp;»</li>
+          <li>«&nbsp;Quel pourcentage de tâches est automatisé&nbsp;?&nbsp;»</li>
+          <li>«&nbsp;Combien d'heures sont gagnées&nbsp;?&nbsp;» — sans jamais vérifier où elles vont</li>
+          <li>«&nbsp;Combien on économise sur la masse salariale&nbsp;?&nbsp;»</li>
+        </ul>
+        <p class="trap-note">Ces questions mesurent une peur, pas une valeur. Elles enterrent les projets avant même le premier déploiement.</p>
+      </div>
+      <div class="trap-col good reveal">
+        <h3>Ce que vous allez mesurer</h3>
+        <ul class="trap-list good">
+          <li>La <em>capacité</em> libérée — et réellement réallouée</li>
+          <li>La <em>qualité</em> — erreurs, litiges et retouches évités</li>
+          <li>La <em>vitesse</em> — délais et cycles raccourcis</li>
+          <li>L'<em>argent</em> — revenus additionnels et coûts évités</li>
+          <li>Le <em>capability yield</em> — la part du potentiel réellement capturée</li>
+        </ul>
+        <p class="trap-note">Le cadrage change la conversation&nbsp;: vous parlez investissement, pas restructuration.</p>
+      </div>
+    </div>
+    <div class="pullquote reveal">
+      <p>Un même outil peut valoir 0&nbsp;€ dans une entreprise qui l'ignore — et <em>200&nbsp;000&nbsp;€ par an</em> dans celle qui sait le mesurer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="programme">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">Le programme</p>
+      <h2>Six modules, trois heures</h2>
+      <p class="sec-intro">Chaque module&nbsp;: une leçon dense, un exemple chiffré réel, un exercice de 15 à 20 minutes. Les modules s'enchaînent — chaque livrable alimente le suivant.</p>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">01</div>
+      <div class="module-body">
+        <h3>Le piège du «&nbsp;combien d'emplois ça remplace&nbsp;»</h3>
+        <p>Pourquoi ce réflexe détruit vos projets — et le cadrage qui les sauve&nbsp;: capacité, qualité, vitesse, argent. Un même outil, deux cadrages, deux accueils opposés.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 15 min</span></div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">02</div>
+      <div class="module-body">
+        <h3>Le capability yield</h3>
+        <p>Le vrai taux d'utilisation de votre IA, maillon par maillon — licences, activation, usage, tâches à valeur, réallocation. Et le plan qui fait passer un outil de 16&nbsp;% à 60&nbsp;% de valeur capturée.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 20 min</span></div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">03</div>
+      <div class="module-body">
+        <h3>Les 5 indicateurs de valeur</h3>
+        <p>Temps, qualité, capacité, vitesse, argent — avec sources de données et conversion en euros. Et la règle anti double comptage qui fait accepter vos chiffres par la finance.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 20 min</span></div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">04</div>
+      <div class="module-body">
+        <h3>Construire un business case IA</h3>
+        <p>Baseline, TCO complet, trois scénarios, ROI, payback, coût de ne rien faire&nbsp;: le dossier que la finance accepte — exemples chiffrés à l'appui, gabarit de décision inclus.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 20 min</span></div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">05</div>
+      <div class="module-body">
+        <h3>Mesurer avant, pendant, après</h3>
+        <p>Le protocole de preuve&nbsp;: baseline de 4 semaines, mode ombre, routage progressif, groupe témoin, comparaison honnête — sans saisonnalité truquée ni cherry-picking.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 15 min</span></div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-num" aria-hidden="true">06</div>
+      <div class="module-body">
+        <h3>Le rapport qui convainc la direction</h3>
+        <p>Trois pages, un chiffre en tête, une décision demandée. Et les cinq objections de la finance anticipées — réponses prêtes, preuves à l'appui.</p>
+        <div class="module-meta"><span>Leçon dense</span><span>Exemple chiffré</span><span>Exercice de 20 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block offers" id="offres">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">Les offres</p>
+      <h2>Trois formules, une seule promesse</h2>
+      <p class="sec-intro">Livraison par email. Chaque commande part directement à l'auteur&nbsp;: confirmation sous 24&nbsp;h ouvrées avec les instructions de paiement et de livraison.</p>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer reveal">
+        <h3>L'Essentiel</h3>
+        <p class="tagline">La formation seule</p>
+        <div class="price"><b>49&nbsp;€</b> <small>paiement unique</small></div>
+        <p class="price-note">Pour vous mettre en mouvement seul</p>
+        <ul>
+          <li>Formation PDF complète — 6 modules, 3 heures</li>
+          <li>Exemples chiffrés réutilisables</li>
+          <li>Exercices avec critères de réussite</li>
+          <li>Checklist finale de 10 points</li>
+        </ul>
+        <button class="btn btn-ghost" type="button" onclick="choisirOffre('Formation PDF — 49 €')">Commander l'Essentiel</button>
+      </div>
+
+      <div class="offer featured reveal">
+        <div class="offer-badge">Le plus choisi</div>
+        <h3>Pack complet</h3>
+        <p class="tagline">Formation + templates</p>
+        <div class="price"><b>89&nbsp;€</b> <small>paiement unique</small></div>
+        <p class="price-note">Pour livrer un chiffrage complet cette semaine</p>
+        <ul>
+          <li>Tout l'Essentiel — la formation complète</li>
+          <li>5 templates prêts à remplir&nbsp;: business case, 5 indicateurs, grille de calcul ROI, rapport direction, objections finance</li>
+          <li>Le rapport direction prêt à remplir</li>
+          <li>Premier business case bouclé en une après-midi</li>
+        </ul>
+        <button class="btn btn-amber" type="button" onclick="choisirOffre('Pack complet — 89 €')">Commander le Pack complet</button>
+      </div>
+
+      <div class="offer reveal">
+        <h3>Pack Direction</h3>
+        <p class="tagline">Formation + co-construction</p>
+        <div class="price"><b>149&nbsp;€</b> <small>paiement unique</small></div>
+        <p class="price-note">Pour arriver au comité avec un dossier solide</p>
+        <ul>
+          <li>Tout le Pack complet</li>
+          <li>Session de co-construction de 45 minutes&nbsp;: votre business case et votre rapport direction bâtis avec l'auteur</li>
+          <li>Session planifiée par email après la commande</li>
+          <li>Priorité de réponse</li>
+        </ul>
+        <button class="btn btn-ghost" type="button" onclick="choisirOffre('Pack Direction — 149 €')">Commander le Pack Direction</button>
+      </div>
+    </div>
+
+    <p class="offer-note">Une question avant de commander&nbsp;? Écrivez-la dans le formulaire ci-dessous — réponse sous 24&nbsp;h ouvrées.</p>
+  </div>
+</section>
+
+<section class="block" id="commander">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">Commander</p>
+      <h2>Votre commande, <em>en 30 secondes</em></h2>
+    </div>
+    <div class="cmd-grid">
+      <div class="cmd-left reveal">
+        <h3>Ce qui se passe ensuite</h3>
+        <p>Votre commande part directement à l'auteur. Vous recevez une confirmation par email, puis les instructions de paiement et de livraison sous 24&nbsp;h ouvrées.</p>
+        <ul>
+          <li>Paiement unique, sans abonnement</li>
+          <li>Formation et templates livrés au format PDF et Markdown</li>
+          <li>Le Pack Direction inclut la session de co-construction, planifiée par email</li>
+          <li>Une question avant ou après l'achat&nbsp;: l'auteur répond par email</li>
+        </ul>
+      </div>
+      <div class="form-card reveal">
+        <form id="commande-form" onsubmit="return commander(event)">
+          <div class="field">
+            <label for="offre">Offre choisie</label>
+            <select id="offre" name="offre" required>
+              <option value="Formation PDF — 49 €">Formation PDF — 49&nbsp;€</option>
+              <option value="Pack complet — 89 €">Pack complet — 89&nbsp;€</option>
+              <option value="Pack Direction — 149 €">Pack Direction — 149&nbsp;€</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="nom">Votre nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Prénom Nom" required>
+          </div>
+          <div class="field">
+            <label for="email">Votre email</label>
+            <input type="email" id="email" name="email" placeholder="vous@entreprise.fr" required>
+          </div>
+          <div class="field">
+            <label for="question">Une question&nbsp;? <span style="text-transform:none;letter-spacing:0;color:var(--ink-faint);">(facultatif)</span></label>
+            <textarea id="question" name="question" placeholder="Ex. : je veux chiffrer un chatbot support pour une équipe de 6 personnes…"></textarea>
+          </div>
+          <button class="btn btn-amber" type="submit">Envoyer ma commande</button>
+          <p class="form-note">Vos coordonnées servent uniquement au traitement de votre commande.</p>
+          <p id="ok" role="status"><b>Merci&nbsp;!</b> Votre commande est bien partie. Vous recevrez une confirmation par email, puis les instructions de paiement et de livraison sous 24&nbsp;h ouvrées.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">FAQ</p>
+      <h2>Les questions qu'on nous pose</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Je n'ai aucune donnée dans mon entreprise. La méthode fonctionne quand même&nbsp;?</summary>
+        <p class="faq-a">Oui. Le module 5 donne le protocole exact pour les situations sans données&nbsp;: triangulation de deux estimations d'experts, échantillon manuel (par exemple compter 50 tickets à la main), et hypothèses explicites écrites noir sur blanc. Une baseline approximative vaut mieux qu'aucune baseline — le rapport affiche la marge d'incertitude, pas un chiffre inventé.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Je suis solopreneur ou dans une petite structure. Est-ce pour moi&nbsp;?</summary>
+        <p class="faq-a">Oui. Les exemples couvrent des équipes de 2 à 50 personnes, et la méthode est indépendante de la taille. Les templates du Pack complet sont conçus pour produire un chiffrage complet en une après-midi — même pour un seul outil et deux utilisateurs.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quels outils IA sont couverts&nbsp;?</summary>
+        <p class="faq-a">Tous. Assistants de codage, chatbots de support, traitement de documents, génération de contenu, automatisations — la méthode mesure la valeur créée dans votre organisation, pas l'outil. Aucun prérequis technique&nbsp;: un tableur suffit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Combien de temps pour produire le chiffrage&nbsp;?</summary>
+        <p class="faq-a">3 heures de formation, plus 1 à 2 heures d'exercices. Avec les templates du Pack complet, le premier business case se boucle en une après-midi — et le rapport direction se remplit en une heure de plus.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Comment se passe la livraison&nbsp;?</summary>
+        <p class="faq-a">Après votre commande, vous recevez par email les instructions de paiement, puis la formation PDF et les templates. Le Pack Direction inclut la session de co-construction de 45 minutes, planifiée par email après la commande.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Et si la méthode ne me convient pas&nbsp;?</summary>
+        <p class="faq-a">Écrivez-nous avant ou après l'achat — l'auteur répond sous 24&nbsp;h ouvrées. Les exercices sont conçus pour être testés immédiatement sur vos propres données&nbsp;: vous saurez en une après-midi si la méthode vous apporte.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <p class="foot-brand">Mesurez la valeur de <em>votre IA</em>, pas le buzz</p>
+      <p style="margin-top:10px;">Formation express — 6 modules, 3 heures. Livraison par email.</p>
+    </div>
+    <div>
+      <p>© 2026 — Mesurez la valeur de votre IA<br>
+      Paiement unique, sans abonnement · Réponse sous 24&nbsp;h ouvrées</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  emailjs.init("8Pui4ZEqxW2jRVF7h");
+
+  function choisirOffre(label) {
+    document.getElementById('offre').value = label;
+    document.getElementById('commander').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function commander(event) {
+    if (event && event.preventDefault) event.preventDefault();
+    var nom = document.getElementById('nom').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var offre = document.getElementById('offre').value;
+    var question = document.getElementById('question').value.trim();
+    if (!nom || !email) {
+      alert('Merci de remplir votre nom et votre email.');
+      return false;
+    }
+    var message = 'Commande : ' + offre;
+    if (question) { message += ' — Question : ' + question; }
+    var d = { site: 'Mesurez la valeur de votre IA', name: nom, email: email, question: message };
+    emailjs.send("service_cy1ytdb", "template_xpo58cv", d)
+      .then(function () {
+        document.getElementById('ok').style.display = 'block';
+        document.getElementById('commande-form').reset();
+      })
+      .catch(function (e) {
+        alert('Erreur d\'envoi : ' + (e && e.text ? e.text : 'veuillez réessayer.'));
+      });
+    return false;
+  }
+
+  // Apparition douce au scroll
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+</script>
+</body>
+</html>
