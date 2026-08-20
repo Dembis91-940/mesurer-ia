@@ -1,7 +1,7 @@
 window.CHATBOT_CONFIG = {
   "name": "Mesurer l'IA",
   "subtitle": "Votre assistant de chiffrage IA",
-  "accent": "#b45309",
+  "accent": "#7C3AED",
   "welcome": "Bonjour ! 👋 Je suis l'assistant de la formation « Mesurez la valeur de votre IA ». En 3 heures, vous savez chiffrer chaque outil IA : je vous réponds en 30 secondes.",
   "quick": [
     "La méthode marche sans données ?",
