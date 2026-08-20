@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de ROI des usages IA — votre IA est-elle rentable ?</title>
+<meta name="description" content="10 questions pour chiffrer le temps gagné et le ROI réel de vos outils IA : heures récupérées, gains en euros, coûts d'abonnement, verdict et plan 30-60-90.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230A0614'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%237C3AED' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Inter',system-ui,sans-serif;
+    background:
+      radial-gradient(58% 44% at 16% 10%, rgba(124,58,237,.16), transparent 62%),
+      radial-gradient(50% 40% at 88% 22%, rgba(232,121,249,.11), transparent 60%),
+      radial-gradient(54% 46% at 60% 94%, rgba(91,33,182,.13), transparent 64%),
+      #0A0614;
+    background-attachment:fixed;
+    color:#F1EBFF; min-height:100vh; overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(rgba(124,58,237,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.05) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 92% 72% at 50% 0%, #000 32%, transparent 100%);
+    mask-image:radial-gradient(ellipse 92% 72% at 50% 0%, #000 32%, transparent 100%);
+  }
+  h1,h2,h3,.kicker,.logo{font-family:'Syne',sans-serif;letter-spacing:-.01em}
+  ::selection{background:rgba(124,58,237,.4)}
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-track{background:#0A0614}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#E879F9,#5B21B6);border-radius:99px;border:3px solid #0A0614}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+
+  header{display:flex;align-items:center;gap:14px;padding:22px 0;border-bottom:1px solid rgba(124,58,237,.2);background:rgba(20,11,38,.78);backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%)}
+  header .wrap{display:flex;align-items:center;gap:14px;width:100%}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#F1EBFF;text-decoration:none}
+  .logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7C3AED,#5B21B6);display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff;box-shadow:0 0 22px rgba(124,58,237,.5)}
+  .logo em{font-style:italic;color:#E879F9}
+  .logo small{display:block;font-size:10px;font-weight:600;letter-spacing:1.6px;color:#9A8CC0;text-transform:uppercase;font-family:'Inter',sans-serif}
+  header a.retour{margin-left:auto;color:#C4B5FD;text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap}
+  header a.retour:hover{text-shadow:0 0 14px rgba(124,58,237,.9)}
+
+  .kicker{margin-top:48px;display:inline-block;font-size:12px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#C4B5FD;background:rgba(124,58,237,.09);border:1px solid rgba(124,58,237,.42);padding:6px 14px;border-radius:999px}
+  h1{font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.14;margin:16px 0 12px;max-width:820px}
+  h1 .hl{background:linear-gradient(120deg,#7C3AED,#E879F9);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .intro{color:#C9BCE8;font-size:16.5px;max-width:680px;line-height:1.7}
+  .intro strong{color:#F1EBFF}
+
+  .etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .etape{background:linear-gradient(160deg, rgba(124,58,237,.10), rgba(91,33,182,.04));backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(124,58,237,.28);border-radius:18px;padding:16px 16px 14px}
+  .etape .n{font-size:11px;font-weight:700;letter-spacing:2px;color:#E879F9;text-transform:uppercase;font-family:'Syne',sans-serif}
+  .etape p{font-size:13px;color:#C9BCE8;margin-top:5px;line-height:1.5}
+
+  .card{background:linear-gradient(160deg, rgba(124,58,237,.10), rgba(91,33,182,.04));backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(124,58,237,.28);border-radius:22px;padding:34px 36px;margin-top:30px;box-shadow:0 24px 60px -30px rgba(0,0,0,.75)}
+  .champ{margin-bottom:22px}
+  .champ label{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;font-weight:600;margin-bottom:9px;color:#d8ccf5;gap:10px}
+  .champ label .val{font-weight:800;font-size:20px;color:#E879F9;white-space:nowrap}
+  .champ input[type=range]{width:100%;accent-color:#7C3AED;cursor:pointer;height:6px}
+  .range-vals{display:flex;justify-content:space-between;font-size:12px;color:#9A8CC0;margin-top:4px}
+  .champ input[type=number]{width:100%;background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.28);color:#F1EBFF;border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;outline:none;transition:border-color .25s, box-shadow .25s}
+  .champ input:focus{border-color:rgba(124,58,237,.7);box-shadow:0 0 0 3px rgba(124,58,237,.16)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#7C3AED,#5B21B6);color:#fff;font-weight:700;border:none;cursor:pointer;border-radius:999px;padding:15px 32px;font-size:16px;font-family:inherit;box-shadow:0 10px 32px -10px rgba(124,58,237,.7);text-decoration:none;transition:transform .25s, box-shadow .25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 46px -10px rgba(124,58,237,.9)}
+  .btn-ghost{background:rgba(124,58,237,.09);color:#F1EBFF;border:1px solid rgba(124,58,237,.42);box-shadow:none}
+  .btn-ghost:hover{border-color:rgba(124,58,237,.7);box-shadow:0 0 34px -6px rgba(124,58,237,.6)}
+  .note{font-size:12px;color:#9A8CC0;margin-top:12px;line-height:1.6}
+
+  .resultat{display:none;margin-top:40px}
+  .resultat.visible{display:block;animation:apparaitre .4s ease}
+  @keyframes apparaitre{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .res-head h2{font-size:24px;color:#C4B5FD}
+  .cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+  .r-card{background:rgba(18,11,34,.7);border:1px solid rgba(124,58,237,.28);border-radius:18px;padding:22px 20px;text-align:center;backdrop-filter:blur(12px)}
+  .r-card .lib{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#9A8CC0}
+  .r-card .num{font-size:26px;font-weight:800;margin-top:8px;color:#E879F9;line-height:1.15}
+  .r-card .num.grad{background:linear-gradient(120deg,#7C3AED,#E879F9);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .r-card .num.green{color:#6ee7b7}
+  .r-card .sub{font-size:12.5px;color:#C9BCE8;margin-top:6px;line-height:1.5}
+
+  .verdict{margin-top:22px;background:rgba(124,58,237,.10);border:1px solid rgba(124,58,237,.45);border-radius:16px;padding:20px 24px;font-size:15.5px;line-height:1.75;color:#F1EBFF}
+  .verdict b{color:#E879F9}
+
+  .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .p-card{background:rgba(18,11,34,.7);border:1px solid rgba(124,58,237,.28);border-radius:16px;padding:20px 20px;backdrop-filter:blur(12px)}
+  .p-card .p-tag{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;color:#E879F9;text-transform:uppercase}
+  .p-card .p-per{font-size:12px;color:#9A8CC0;margin-top:3px}
+  .p-card h4{font-size:16px;margin:10px 0 8px;color:#F1EBFF}
+  .p-card p{font-size:13px;color:#C9BCE8;line-height:1.65}
+
+  .cta-bloc{background:linear-gradient(160deg,rgba(18,11,34,.85),rgba(20,11,38,.9));border:1px solid rgba(124,58,237,.35);border-radius:22px;padding:38px;text-align:center;margin:44px 0 10px;backdrop-filter:blur(14px)}
+  .cta-bloc h2{font-size:clamp(22px,3vw,30px);font-weight:700;background:linear-gradient(120deg,#7C3AED,#E879F9);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cta-bloc p{color:#C9BCE8;margin:12px auto 24px;max-width:540px;line-height:1.7}
+  .cta-bloc .prix{margin-top:14px;font-size:13px;color:#9A8CC0}
+  .cta-bloc .prix strong{color:#E879F9}
+  footer{margin-top:46px;padding:26px 0 40px;border-top:1px solid rgba(255,255,255,.08);color:#9A8CC0;font-size:13px;text-align:center;line-height:1.8}
+  footer a{color:#C4B5FD;text-decoration:none}
+
+  @media(max-width:680px){.etapes{grid-template-columns:1fr}.card{padding:26px 20px}.cartes{grid-template-columns:1fr}.plan{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark">M</span><span>Mesurez la valeur de <em>votre IA</em><small>Formation express · ROI & mesure</small></span></a>
+    <a class="retour" href="index.html">← Retour à l'accueil</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="kicker">Outil gratuit · 2 minutes · 100 % local</div>
+  <h1>Votre IA est-elle <span class="hl">vraiment rentable ?</span></h1>
+  <p class="intro">10 questions pour chiffrer ce que vos outils IA vous rapportent : <strong>temps gagné</strong>, <strong>gains en euros</strong>, <strong>coûts d'abonnements</strong> — puis un verdict clair et un plan <strong>30-60-90</strong> pour passer à l'action.</p>
+
+  <div class="etapes">
+    <div class="etape"><div class="n">Étape 1</div><p>Répondez aux 10 questions (curseurs et montants).</p></div>
+    <div class="etape"><div class="n">Étape 2</div><p>Cliquez sur « Calculer mon ROI » : le bilan apparaît.</p></div>
+    <div class="etape"><div class="n">Étape 3</div><p>Suivez le plan 30-60-90 pour passer au niveau supérieur.</p></div>
+  </div>
+
+  <div class="card">
+    <div class="champ">
+      <label for="q1">1. Combien d'employés utilisent l'IA ? <span class="val" id="v-q1">10</span></label>
+      <input type="range" id="q1" min="1" max="100" step="1" value="10">
+      <div class="range-vals"><span>1 personne</span><span>100 personnes</span></div>
+    </div>
+    <div class="champ">
+      <label for="q2">2. Heures par semaine et par personne sur des tâches répétitives <span class="val" id="v-q2">8 h</span></label>
+      <input type="range" id="q2" min="0" max="30" step="1" value="8">
+      <div class="range-vals"><span>0 h</span><span>30 h / semaine</span></div>
+    </div>
+    <div class="champ">
+      <label for="q3">3. Part de ces tâches automatisable avec l'IA <span class="val" id="v-q3">40 %</span></label>
+      <input type="range" id="q3" min="0" max="100" step="5" value="40">
+      <div class="range-vals"><span>0 %</span><span>100 %</span></div>
+    </div>
+    <div class="champ">
+      <label for="q4">4. Gain de temps réel de l'IA sur une tâche automatisée <span class="val" id="v-q4">60 %</span></label>
+      <input type="range" id="q4" min="0" max="100" step="5" value="60">
+      <div class="range-vals"><span>0 % (aucun gain)</span><span>100 % (temps éliminé)</span></div>
+    </div>
+    <div class="champ">
+      <label for="q5">5. Part du temps gagné réellement réallouée à des tâches à valeur <span class="val" id="v-q5">50 %</span></label>
+      <input type="range" id="q5" min="0" max="100" step="5" value="50">
+      <div class="range-vals"><span>0 %</span><span>100 %</span></div>
+    </div>
+    <div class="champ">
+      <label for="q6">6. Nombre d'outils IA payants en usage <span class="val" id="v-q6">4</span></label>
+      <input type="range" id="q6" min="0" max="20" step="1" value="4">
+      <div class="range-vals"><span>0</span><span>20 outils</span></div>
+    </div>
+    <div class="champ">
+      <label for="q7">Coût mensuel total des abonnements IA <span class="val" id="v-q7">120 €</span></label>
+      <input type="range" id="q7" min="0" max="2000" step="10" value="120">
+      <div class="range-vals"><span>0 €</span><span>2 000 € / mois</span></div>
+    </div>
+    <div class="champ">
+      <label for="q8">Taux horaire chargé (coût réel d'une heure de travail) <span class="val" id="v-q8">35 €</span></label>
+      <input type="range" id="q8" min="15" max="120" step="5" value="35">
+      <div class="range-vals"><span>15 €</span><span>120 € / heure</span></div>
+    </div>
+    <div class="champ">
+      <label for="q9">Semaines travaillées par an <span class="val" id="v-q9">47 sem.</span></label>
+      <input type="range" id="q9" min="40" max="52" step="1" value="47">
+      <div class="range-vals"><span>40 semaines</span><span>52 semaines</span></div>
+    </div>
+    <div class="champ">
+      <label for="q10">Heures par semaine consacrées à superviser / corriger les outils IA <span class="val" id="v-q10">2 h</span></label>
+      <input type="range" id="q10" min="0" max="20" step="0.5" value="2">
+      <div class="range-vals"><span>0 h</span><span>20 h / semaine</span></div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="btn-calculer">🧮 Calculer mon ROI →</button>
+      <button class="btn btn-ghost" id="btn-reset">↺ Réinitialiser</button>
+    </div>
+    <p class="note">Hypothèses : 35 €/h par défaut (modifiable), semaine de 5 jours ouvrés. Vos réponses sont enregistrées localement dans votre navigateur, rien n'est envoyé sur Internet.</p>
+  </div>
+
+  <div class="resultat" id="resultat">
+    <div class="res-head"><h2>📊 Votre bilan IA</h2></div>
+    <div class="cartes">
+      <div class="r-card"><div class="lib">Temps gagné</div><div class="num" id="r-heures">—</div><div class="sub">par mois, sur tâches automatisées</div></div>
+      <div class="r-card"><div class="lib">Temps réalloué / an</div><div class="num" id="r-heures-an">—</div><div class="sub">vers des tâches à valeur</div></div>
+      <div class="r-card"><div class="lib">Gains annuels</div><div class="num grad" id="r-gains">—</div><div class="sub">valeur du temps réalloué</div></div>
+      <div class="r-card"><div class="lib">Coûts annuels</div><div class="num" id="r-couts">—</div><div class="sub">abonnements + supervision</div></div>
+      <div class="r-card"><div class="lib">ROI annuel</div><div class="num green" id="r-roi">—</div><div class="sub">gains − coûts, en % des coûts</div></div>
+      <div class="r-card"><div class="lib">Retour sur investissement</div><div class="num" id="r-payback">—</div><div class="sub">durée pour rembourser les coûts</div></div>
+    </div>
+    <div class="verdict" id="verdict"></div>
+    <div class="res-head" style="margin-top:26px"><h2 style="font-size:20px">🗺️ Votre plan 30-60-90</h2></div>
+    <div class="plan">
+      <div class="p-card">
+        <div class="p-tag">Jours 1 à 30</div><div class="p-per">Mesurer — la baseline</div>
+        <h4>Quantifier avant d'agir</h4>
+        <p id="p-30"></p>
+      </div>
+      <div class="p-card">
+        <div class="p-tag">Jours 31 à 60</div><div class="p-per">Tester — un périmètre</div>
+        <h4>Un seul processus, validé</h4>
+        <p id="p-60"></p>
+      </div>
+      <div class="p-card">
+        <div class="p-tag">Jours 61 à 90</div><div class="p-per">Étendre — et chiffrer</div>
+        <h4>Généraliser la preuve</h4>
+        <p id="p-90"></p>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:22px">
+      <a class="btn btn-ghost" href="index.html#offres">📚 La méthode complète : 6 modules pour chiffrer la valeur →</a>
+    </div>
+  </div>
+
+  <div class="cta-bloc">
+    <h2>Ce que vous mesurez, vous l'améliorez.</h2>
+    <p>La formation express « Mesurez la valeur de votre IA » vous apprend en 3 heures à produire un business case chiffré et un rapport que la direction accepte — indicateurs, ROI, payback.</p>
+    <a class="btn" href="index.html#offres">Découvrir la formation →</a>
+    <div class="prix">À partir de <strong>49 €</strong> — paiement unique, sans abonnement</div>
+  </div>
+</div>
+
+<footer>
+  © 2026 — Mesurez la valeur de votre IA. <a href="index.html">Retour au site</a>.<br>
+  Outil d'estimation à but pédagogique : les résultats dépendent de la fiabilité de vos saisies.
+</footer>
+
+<script>
+(function(){
+  var LS_KEY = 'roi-ia-v1';
+  var $ = function(id){ return document.getElementById(id); };
+
+  var Q = [
+    { id:'q1',  valId:'v-q1',  unit:'',          fmt:function(v){ return v.toLocaleString('fr-FR'); } },
+    { id:'q2',  valId:'v-q2',  unit:' h',        fmt:function(v){ return v.toLocaleString('fr-FR')+' h'; } },
+    { id:'q3',  valId:'v-q3',  unit:' %',        fmt:function(v){ return v.toLocaleString('fr-FR')+' %'; } },
+    { id:'q4',  valId:'v-q4',  unit:' %',        fmt:function(v){ return v.toLocaleString('fr-FR')+' %'; } },
+    { id:'q5',  valId:'v-q5',  unit:' %',        fmt:function(v){ return v.toLocaleString('fr-FR')+' %'; } },
+    { id:'q6',  valId:'v-q6',  unit:'',          fmt:function(v){ return v.toLocaleString('fr-FR'); } },
+    { id:'q7',  valId:'v-q7',  unit:' €',        fmt:function(v){ return v.toLocaleString('fr-FR')+' €'; } },
+    { id:'q8',  valId:'v-q8',  unit:' €',        fmt:function(v){ return v.toLocaleString('fr-FR')+' €'; } },
+    { id:'q9',  valId:'v-q9',  unit:' sem.',     fmt:function(v){ return v.toLocaleString('fr-FR')+' sem.'; } },
+    { id:'q10', valId:'v-q10', unit:' h',        fmt:function(v){ return v.toLocaleString('fr-FR')+' h'; } }
+  ];
+  function val(id){ return parseFloat($(id).value) || 0; }
+
+  function fmtEuros(n){
+    if (!isFinite(n)) return '—';
+    return Math.round(n).toLocaleString('fr-FR') + ' €';
+  }
+
+  function majValeurs(){
+    Q.forEach(function(q){
+      var v = val(q.id);
+      $(q.valId).textContent = q.fmt(v);
+    });
+    sauvegarder();
+  }
+
+  function calculer(){
+    var employes   = val('q1');
+    var hSem       = val('q2');          /* heures/sem/perso tâches répétitives */
+    var auto       = val('q3')/100;      /* part automatisable */
+    var eff        = val('q4')/100;      /* gain de temps réel de l'IA */
+    var realloc    = val('q5')/100;      /* part du temps gagné réallouée */
+    var nbOutils   = val('q6');
+    var coutAbos   = val('q7');          /* €/mois */
+    var tauxH      = val('q8');          /* €/h chargé */
+    var semAn      = val('q9');          /* semaines/an */
+    var hSuperv    = val('q10');         /* h/sem supervision */
+
+    /* Temps gagné */
+    var hManuellesAn = employes * hSem * semAn;                 /* heures manuelles répétitives / an */
+    var hAutoAn      = hManuellesAn * auto;                     /* heures automatisables / an */
+    var hGagneesAn   = hAutoAn * eff;                           /* heures réellement gagnées / an */
+    var hGagneesMois = hGagneesAn / 12;
+    var hRealloueesAn = hGagneesAn * realloc;                   /* heures réallouées / an */
+
+    /* Gains et coûts */
+    var gains = hRealloueesAn * tauxH;
+    var coutSuperv = hSuperv * semAn * tauxH;
+    var couts = coutAbos * 12 + coutSuperv;
+    var roi = couts > 0 ? (gains - couts) / couts * 100 : (gains > 0 ? 999 : 0);
+    var gainMensuel = gains / 12;
+    var coutMensuel = couts / 12;
+    var paybackMois = gainMensuel > 0 ? coutMensuel / gainMensuel : null;
+
+    $('r-heures').textContent = hGagneesMois.toLocaleString('fr-FR',{maximumFractionDigits:0}) + ' h/mois';
+    $('r-heures-an').textContent = Math.round(hRealloueesAn).toLocaleString('fr-FR') + ' h/an';
+    $('r-gains').textContent = fmtEuros(gains);
+    $('r-couts').textContent = fmtEuros(couts);
+    $('r-roi').textContent = (roi >= 999 ? '∞' : roi.toLocaleString('fr-FR',{maximumFractionDigits:0}) + ' %');
+    $('r-payback').textContent = paybackMois === null ? '—' : (paybackMois < 1 ? '< 1 mois' : '≈ ' + paybackMois.toLocaleString('fr-FR',{maximumFractionDigits:1}).replace('.',',') + ' mois');
+
+    /* Verdict */
+    var verdict = '';
+    if (roi >= 100){
+      verdict += '🎉 <b>Votre IA est clairement rentable.</b> Pour chaque euro dépensé, elle vous rapporte <b>'+ (roi/100).toLocaleString('fr-FR',{maximumFractionDigits:1}).replace('.',',') + ' €</b> ('+Math.round(roi)+' % de ROI annuel). Vous gagnez <b>'+hGagneesMois.toLocaleString('fr-FR',{maximumFractionDigits:0})+' h/mois</b> — dont '+Math.round(hRealloueesAn).toLocaleString('fr-FR')+' h réallouées à de la valeur chaque année.';
+    } else if (roi >= 0){
+      verdict += '✅ <b>Votre IA est rentable.</b> ROI annuel de <b>'+Math.round(roi)+' %</b> : vous gagnez plus que vous ne dépensez, mais la marge reste fragile. Optimisez la réallocation ('+Math.round(val('q5'))+' % actuellement) et l\'efficacité réelle ('+Math.round(val('q4'))+' %) pour passer au niveau supérieur.';
+    } else {
+      verdict += '⚠️ <b>Votre IA n\'est pas encore rentable.</b> Les coûts ('+fmtEuros(couts)+'/an) dépassent les gains ('+fmtEuros(gains)+'/an). Trois leviers, du plus efficace au moins efficace :';
+      var leviers = [];
+      if (hRealloueesAn > 0 && realloc < 1) leviers.push('<b>réallouer le temps gagné</b> ('+Math.round(realloc*100)+' % réalloués aujourd\'hui)');
+      if (hAutoAn > 0 && eff < 1) leviers.push('<b>améliorer l\'automatisation</b> (gain réel de '+Math.round(eff*100)+' %)');
+      if (nbOutils > 0) leviers.push('<b>auditer vos '+Math.round(nbOutils)+' abonnements</b> ('+fmtEuros(coutAbos*12)+'/an)');
+      if (leviers.length) verdict += '<br>🔧 Commencez par : '+leviers.join(', ')+'.';
+    }
+    $('verdict').innerHTML = verdict;
+
+    /* Plan 30-60-90 */
+    $('p-30').innerHTML = 'Pendant 2 semaines, comptez précisément les heures passées sur les tâches répétitives (estimation : <b>'+Math.round(hSem).toLocaleString('fr-FR')+' h/sem</b> par personne, <b>'+Math.round(employes)+' pers.</b>). Vérifiez vos abonnements : <b>'+Math.round(nbOutils)+' outils</b> pour <b>'+fmtEuros(coutAbos*12)+'/an</b> — tous réellement utilisés ?';
+    $('p-60').innerHTML = 'Choisissez UN processus répétitif et automatisez-le avec un seul outil. Mesurez le temps réellement gagné (objectif : valider les <b>'+Math.round(auto*100)+' % automatisables</b> et les <b>'+Math.round(eff*100)+' % d\'efficacité</b>). Corrigez ce qui bloque avant d\'étendre.';
+    $('p-90').innerHTML = 'Étendez l\'automatisation aux 2-3 processus à plus fort volume, réallouez les heures gagnées (<b>'+Math.round(hGagneesMois).toLocaleString('fr-FR')+' h/mois</b> potentiel) vers des tâches à valeur, puis présentez le chiffrage : <b>'+fmtEuros(gains)+'</b> de gains pour <b>'+fmtEuros(couts)+'</b> de coûts (ROI '+ (roi>=999?'∞':Math.round(roi)+' %') +').';
+
+    $('resultat').classList.add('visible');
+    $('resultat').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  function sauvegarder(){
+    try {
+      var d = {};
+      Q.forEach(function(q){ d[q.id] = $(q.id).value; });
+      d.saved = new Date().toISOString();
+      localStorage.setItem(LS_KEY, JSON.stringify(d));
+    } catch(e){}
+  }
+  function restaurer(){
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      if (!raw) return;
+      var d = JSON.parse(raw);
+      Q.forEach(function(q){ if (d[q.id]!==undefined && d[q.id]!==null) $(q.id).value = d[q.id]; });
+    } catch(e){}
+  }
+  function reset(){
+    try { localStorage.removeItem(LS_KEY); } catch(e){}
+    var defs = { q1:10, q2:8, q3:40, q4:60, q5:50, q6:4, q7:120, q8:35, q9:47, q10:2 };
+    Q.forEach(function(q){ $(q.id).value = defs[q.id]; });
+    majValeurs();
+    $('resultat').classList.remove('visible');
+  }
+
+  Q.forEach(function(q){ $(q.id).addEventListener('input', majValeurs); });
+  $('btn-calculer').addEventListener('click', calculer);
+  $('btn-reset').addEventListener('click', reset);
+
+  restaurer();
+  majValeurs();
+})();
+</script>
+</body>
+</html>

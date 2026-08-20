@@ -418,6 +418,21 @@ input:focus, select:focus, textarea:focus, .champ:focus {
    .btn-amber { background:linear-gradient(135deg,var(--fv-a1),var(--fv-a2)) !important; color:#fff !important; }
    .hero-facts b { color:var(--fv-a3); }
    
+/* ---------- Bouton outil ---------- */
+.btn-outil{
+  background:rgba(124,58,237,.10) !important;
+  border:1px solid rgba(124,58,237,.5) !important;
+  color:#C4B5FD !important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:0 0 24px -6px rgba(124,58,237,.3) !important;
+}
+.btn-outil:hover{
+  background:rgba(124,58,237,.18) !important;
+  border-color:#E879F9 !important;
+  box-shadow:0 0 40px -6px rgba(124,58,237,.6) !important;
+  transform:translateY(-3px);
+}
 /* ---------- Mobile ---------- */
 @media (max-width:760px) {
   .futur-bg::before { background-size:32px 32px; }
@@ -456,6 +471,7 @@ input:focus, select:focus, textarea:focus, .champ:focus {
         <p class="hero-lead"><strong>En 3 heures, vous savez chiffrer la valeur réelle de chaque outil IA de votre entreprise&nbsp;:</strong> heures réallouées, qualité, capacité, vitesse, euros — avec des hypothèses défendables, et un rapport de trois pages que la direction accepte.</p>
         <div class="hero-cta">
           <a class="btn btn-amber" href="#offres">Voir les offres</a>
+          <a class="btn btn-outil" href="outil.html">🧮 Essayer le calculateur →</a>
           <a class="btn btn-ghost" href="#programme">Le programme</a>
         </div>
       </div>
