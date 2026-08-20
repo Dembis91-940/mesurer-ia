@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mesurez la valeur de votre IA, pas le buzz — Formation express</title>
 <meta name="description" content="En 3 heures, chiffrez la valeur réelle de chaque outil IA de votre entreprise : capability yield, 5 indicateurs, business case, rapport direction. Formation PDF 49 €, Pack complet 89 €, Pack Direction 149 €.">
 <meta property="og:title" content="Formation « Mesurez la valeur de votre IA »">
@@ -26,7 +29,11 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23120d08'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23f59e0b' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --bg:#120d08;
     --bg-2:#1a130a;
@@ -271,9 +278,160 @@
     .reveal{opacity:1;transform:none;transition:none;}
     .btn{transition:none;}
   }
+
+:root {
+--bg:#0A0614; --bg-2:#140B26; --surface:#120B22; --surface-2:#180F2E;
+  --ink:#F1EBFF; --ink-dim:#C9BCE8; --ink-faint:#9A8CC0;
+  --amber:#7C3AED; --amber-soft:#E879F9; --copper:#5B21B6;
+  --line:rgba(124,58,237,.30); --line-strong:rgba(124,58,237,.55);
+  --serif:'Syne',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+
+/* ============ FUTUR V3 — mesurer-ia ============ */
+:root {
+  --fv-a1:#7C3AED; --fv-a2:#5B21B6; --fv-a3:#E879F9; --fv-al:#C4B5FD;
+  --fv-bg:#0A0614; --fv-bg2:#140B26; --fv-text:#F1EBFF; --fv-muted:#A99BCB;
+  --fv-tf:'Syne',sans-serif; --fv-bf:'Inter',sans-serif;
+}
+html { scroll-behavior:smooth; }
+body {
+  font-family:var(--fv-bf), system-ui, sans-serif !important;
+  background:#0A0614 !important;
+  color:#F1EBFF !important;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.title,.sec-title,.kicker,.logo,.brand {
+  font-family:var(--fv-tf), serif !important;
+  letter-spacing:-.01em;
+}
+::selection { background:rgba(124, 58, 237,.4); }
+/* ---------- Fond futuriste ---------- */
+.futur-bg {
+  position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  background:
+    radial-gradient(58% 44% at 16% 10%, rgba(124, 58, 237,.17), transparent 62%),
+    radial-gradient(50% 40% at 88% 22%, rgba(232, 121, 249,.13), transparent 60%),
+    radial-gradient(54% 46% at 60% 94%, rgba(91, 33, 182,.15), transparent 64%),
+    var(--fv-bg);
+}
+.futur-bg::before {
+  content:""; position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(124, 58, 237,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237,.06) 1px, transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 92% 72% at 50% 0%, #000 32%, transparent 100%);
+          mask-image:radial-gradient(ellipse 92% 72% at 50% 0%, #000 32%, transparent 100%);
+}
+.futur-bg::after {
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(34% 26% at 80% 16%, rgba(124, 58, 237,.12), transparent 70%);
+  animation:fvPulse 9s ease-in-out infinite;
+}
+@keyframes fvPulse {
+  0%,100% { opacity:.5; transform:scale(1); }
+  50% { opacity:1; transform:scale(1.1); }
+}
+/* ---------- Glassmorphism ---------- */
+.form-card, .offer, .module, .faq-item, .hero-aside, .cmd-grid {
+  background:linear-gradient(160deg, rgba(124, 58, 237,.10), rgba(91, 33, 182,.05)) !important;
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid rgba(124, 58, 237,.28) !important;
+  border-radius:22px !important;
+  box-shadow:0 24px 60px -30px rgba(0,0,0,.75), 0 0 0 1px rgba(124, 58, 237,.06), 0 0 46px -14px rgba(124, 58, 237,.30);
+  transition:transform .32s ease, box-shadow .32s ease, border-color .32s ease;
+}
+.form-card, .offer, .module, .faq-item, .hero-aside, .cmd-grid:hover {
+  transform:translateY(-6px);
+  box-shadow:0 32px 72px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(124, 58, 237,.13), 0 0 66px -10px rgba(124, 58, 237,.45);
+}
+/* ---------- Navigation ---------- */
+nav, .nav, .main-nav {
+  background:rgba(20, 11, 38,.78) !important;
+  backdrop-filter:blur(16px) saturate(170%);
+  -webkit-backdrop-filter:blur(16px) saturate(170%);
+  border-bottom:1px solid rgba(124, 58, 237,.2);
+}
+nav a, .nav a, .main-nav a { color:var(--fv-muted) !important; transition:color .25s, text-shadow .25s; }
+nav a:hover, .nav a:hover, .main-nav a:hover {
+  color:var(--fv-al) !important;
+  text-shadow:0 0 16px rgba(124, 58, 237,.9);
+}
+.logo, .brand { color:var(--fv-text) !important; }
+/* ---------- Boutons ---------- */
+.btn, .btn-primary, .bouton-principal, .cta-en-tete {
+  background:linear-gradient(135deg, #7C3AED, #5B21B6) !important;
+  border:none !important;
+  box-shadow:0 10px 32px -10px rgba(124, 58, 237,.7), 0 0 0 1px rgba(124, 58, 237,.25) !important;
+  transition:transform .25s, box-shadow .25s !important;
+  color:#F1EBFF !important;
+}
+.btn:hover, .btn-primary:hover, .bouton-principal:hover {
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 16px 46px -10px rgba(124, 58, 237,.9), 0 0 24px rgba(124, 58, 237,.35) !important;
+}
+.btn-ghost, .btn-secondary, .bouton-contour {
+  background:rgba(124, 58, 237,.09) !important;
+  border:1px solid rgba(124, 58, 237,.42) !important;
+  color:var(--fv-text) !important;
+  backdrop-filter:blur(8px);
+  transition:transform .25s, background .25s, box-shadow .25s;
+}
+.btn-ghost:hover, .btn-secondary:hover, .bouton-contour:hover {
+  background:rgba(124, 58, 237,.18) !important;
+  box-shadow:0 0 34px -6px rgba(124, 58, 237,.6);
+  transform:translateY(-3px);
+}
+/* ---------- Badges / tags ---------- */
+.badge, .tag, .kicker, .etiquette, .sec-tag, .sur-titre, .num {
+  font-family:var(--fv-tf), serif !important;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:#C4B5FD !important;
+}
+/* ---------- Champs ---------- */
+input, select, textarea, .champ, .field input, .field select, .form-box input {
+  background:rgba(124, 58, 237,.07) !important;
+  border:1px solid rgba(124, 58, 237,.28) !important;
+  color:var(--fv-text) !important;
+  border-radius:12px !important;
+  transition:border-color .25s, box-shadow .25s;
+}
+input:focus, select:focus, textarea:focus, .champ:focus {
+  border-color:rgba(124, 58, 237,.7) !important;
+  box-shadow:0 0 0 3px rgba(124, 58, 237,.16) !important;
+  outline:none;
+}
+/* ---------- Prix ---------- */
+.prix, .price, .montant { color:#C4B5FD !important; }
+/* ---------- Réveil ---------- */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease; }
+.reveal.visible, .reveal.in { opacity:1; transform:none; }
+/* ---------- Titres glow ---------- */
+.title, .sec-title, h1, h2, .hero-title {
+  text-shadow:0 0 46px rgba(124, 58, 237,.28);
+}
+/* ---------- Extra par site ---------- */
+
+   .offer.featured { border-color:rgba(124,58,237,.5); box-shadow:0 0 40px rgba(124,58,237,.22); }
+   .btn-amber { background:linear-gradient(135deg,var(--a1),var(--a2)) !important; color:#fff !important; }
+   .hero-facts b { color:var(--a3); }
+   
+/* ---------- Mobile ---------- */
+@media (max-width:760px) {
+  .futur-bg::before { background-size:32px 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation:none !important; transition:none !important; }
+  .reveal { opacity:1; transform:none; }
+}
+
 </style>
 </head>
 <body>
+<div class="futur-bg" aria-hidden="true"></div>
+
 
 <header class="nav">
   <div class="nav-inner">
@@ -293,7 +451,7 @@
     <div class="hero-grid">
       <div class="hero-left">
         <p class="kicker">Formation express&nbsp;·&nbsp;6 modules&nbsp;·&nbsp;3 heures</p>
-        <h1><span style="background:linear-gradient(90deg,#d97706,#92400e);-webkit-background-clip:text;background-clip:text;color:transparent;">Ce que vous mesurez</span>, vous l'améliorez.</h1>
+        <h1><span style="background:linear-gradient(90deg,#7C3AED,#92400e);-webkit-background-clip:text;background-clip:text;color:transparent;">Ce que vous mesurez</span>, vous l'améliorez.</h1>
         <p class="hero-lead"><strong>En 3 heures, vous savez chiffrer la valeur réelle de chaque outil IA de votre entreprise&nbsp;:</strong> heures réallouées, qualité, capacité, vitesse, euros — avec des hypothèses défendables, et un rapport de trois pages que la direction accepte.</p>
         <div class="hero-cta">
           <a class="btn btn-amber" href="#offres">Voir les offres</a>
@@ -581,6 +739,55 @@
   </div>
 </footer>
 
+
+<!-- ============ CHATBOT Mesurer l'IA ============ -->
+
+
+
+
+
+
+<script>
+/* FUTUR V3 — compteurs animés */
+(function(){
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var sels = [".stat b", ".k-val", ".mini-stat b", "[data-count]"];
+  var els = [];
+  sels.forEach(function(s){ document.querySelectorAll(s).forEach(function(el){ els.push(el); }); });
+  if (!els.length || !("IntersectionObserver" in window)) return;
+  function parse(el){
+    var t = el.textContent.trim().replace(/\u00a0/g," ");
+    var m = t.match(/^(\d[\d\s]*(?:[.,]\d+)?)(.*)$/);
+    if (!m) return null;
+    var num = parseFloat(m[1].replace(/\s/g,"").replace(",", "."));
+    if (isNaN(num) || num > 9999999 || num < -9999999) return null;
+    return { target: num, suffix: m[2] || "", hasDec: /[.,]\d/.test(m[1]) };
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var el = en.target, p = parse(el);
+      if (!p) { io.unobserve(el); return; }
+      var start = null, dur = 1500;
+      function step(ts){
+        if (!start) start = ts;
+        var pr = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - pr, 3);
+        var val = p.target * eased;
+        el.textContent = (p.hasDec ? val.toLocaleString("fr-FR", {maximumFractionDigits:1}) : Math.round(val).toLocaleString("fr-FR")) + p.suffix;
+        if (pr < 1) requestAnimationFrame(step);
+        else el.textContent = (p.hasDec ? p.target.toLocaleString("fr-FR", {maximumFractionDigits:1}) : Math.round(p.target).toLocaleString("fr-FR")) + p.suffix;
+      }
+      requestAnimationFrame(step);
+      io.unobserve(el);
+    });
+  }, { threshold: .4 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script src="chatbot-config.js"></script>
+<script src="chatbot.js"></script>
 <script>
   emailjs.init("8Pui4ZEqxW2jRVF7h");
 
@@ -626,10 +833,5 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 </script>
-<!-- ============ CHATBOT Mesurer l'IA ============ -->
-<script src="chatbot-config.js"></script>
-<script src="chatbot.js"></script>
-
-<style>.btn-ghost, .nav-cta, .btn, .btn-amber { background: linear-gradient(135deg, #d97706, #92400e) !important; border: none; }</style>
 </body>
 </html>
